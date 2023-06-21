@@ -54,3 +54,19 @@ cp /home/quay/quay-config.tar.gz $QUAY/config
 cd $QUAY/config
 tar xvf quay-config.tar.gz
 ```
+
+## Prepare local storage for image data ##
+```
+mkdir $QUAY/storage
+setfacl -m u:1001:-wx $QUAY/storage
+```
+
+## Deploy the Red Hat Quay registry ##
+```
+sudo podman run -d --rm -p 80:8080 -p 443:8443  \
+--name=quay \
+-v $QUAY/config:/conf/stack:Z \
+-v $QUAY/storage:/datastorage:Z \
+registry.redhat.io/quay/quay-rhel8:v3.8.7
+``
+
