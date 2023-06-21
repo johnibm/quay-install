@@ -45,3 +45,10 @@ registry.redhat.io/rhel8/redis-6:1-110
 sudo podman run --rm -it --name quay_config -p 80:8080 -p 443:8443 registry.redhat.io/quay/quay-rhel8:v3.8.7 config secret
 ```
 
+## Configure Quay via Web Interface ##
+
+## Prepare Configuration Folder ##
+```
+mkdir $QUAY/config
+cp /home/quay/quay-config.tar.gz $QUAY/config
+cd $QUAY/config
