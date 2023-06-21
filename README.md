@@ -1,4 +1,6 @@
 # Create an internal registry using quay (test purposes only) #
+## Reference: ##
+#### https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html/deploy_red_hat_quay_for_proof-of-concept_non-production_purposes/poc-getting-started ####
 ## Install tools and login to registry.redhat.io ##
 ```
 sudo yum module install -y container-tools
